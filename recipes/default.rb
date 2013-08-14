@@ -53,15 +53,15 @@ pkgs.each do |pkg|
   end
 end
 
-template "#{node['varnish']['config_dir']}/default.vcl" do
-  source "default.vcl.erb"
-  owner "root"
-  group "root"
-  mode 0644
-  variables(
-    :params => node['varnish']
-  )
-end
+#template "#{node['varnish']['config_dir']}/default.vcl" do
+#  source "default.vcl.erb"
+#  owner "root"
+#  group "root"
+#  mode 0644
+#  variables(
+#    :params => node['varnish']
+#  )
+#end
 
 template node['varnish']['daemon_config'] do
   source "varnish.erb"
